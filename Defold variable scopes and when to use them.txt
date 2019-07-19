@@ -1,0 +1,29 @@
+self - Shorthand that refers to the current script 
+go - Shorthand that refers to the game object running the script
+. - Shorthand resolving to the current game object.
+# - Shorthand resolving to the current component.
+
+
+For example:
+ 	msg.post(".", "acquire_input_focus") --gives input focus to the current game object
+
+	msg.post("#", "reset") --resets the current script
+
+
+Self vs local when defining properties : 
+	Self is an instance variable and local will be shared with all using the same script. Only local variables declared outside the scope of the init(), final(), update(), etc. are available to all scripts of the same type.
+
+The difference between a go.property() variable and a variable defined with self are
+- A go.property() declared variable is accessible by other scripts using go.get() or go.set().
+- A go.property() declared variable can be changed in the editor
+
+When to define variables at varying scope levels:
+ - go.property()
+ 	Used primarily when a varible on a script must vary between script instances (eg - changed from the properties window or when passed as an argument to factory.create())
+
+ - self scope
+ 	Used primarily for any other instance-specific variable needed on a script that would not be necessarily needed to be altered 
+
+ - local scope
+ 	Used primarily for variables declared at the top level of a script for values that must shared between multiple instances of the same type of script. (E.g - a counter or a shared list of instances so that broadcasts can be made to all script instances of a certain type.)
+
