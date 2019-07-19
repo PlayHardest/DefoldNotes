@@ -9,6 +9,10 @@ For example:
 
 	msg.post("#", "reset") --resets the current script
 
+	self.speed = 0 --sets the speed for the current script to 0
+
+	go.get_position() --gets the position of the game object the script is connected to
+
 
 Self vs local when defining properties : 
 	Self is an instance variable and local will be shared with all using the same script. Only local variables declared outside the scope of the init(), final(), update(), etc. are available to all scripts of the same type.
