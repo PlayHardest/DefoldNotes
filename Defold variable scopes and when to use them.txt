@@ -40,9 +40,9 @@ When to define variables at varying scope levels:
 
  	//in a different script
  	function init(self)
- 		print(foobar)
- 		print(_G.foobar)
- 		print(_G["foobar"])
+ 		print(timeofday)
+ 		print(_G.timeofday)
+ 		print(_G["timeofday"])
  		//all three of these work
 
 
